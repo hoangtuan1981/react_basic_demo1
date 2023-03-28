@@ -9,7 +9,6 @@ class Nav extends React.Component {
         <a className='active' href='/'>Home</a>
         <a href='todo'>To Do</a>
         <a href='about'>About</a>
-        <a href='contact'>Contact</a>
       </div>
     )
   }

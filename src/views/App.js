@@ -10,6 +10,7 @@ import Nav from './Nav/Nav'
 import ToDoList from './ToDo/ToDoList';
 //import AddToDo from './AddToDo';
 import About from './About';
+import Home from './Home';
 
 /*
 function App() {
@@ -28,13 +29,10 @@ function App() {
     <div className="App">
 
       <header className="App-header">
-      <Nav />
-        <p>
-          Learning basic React
-        </p>
+        <Nav />
         <Router>
           <Routes>
-            <Route path="" />
+            <Route path="" element={<Home />}/>
             <Route path="/todo" element={<ToDoList />} />
             <Route path="/about" element={<About />} />
           </Routes>
@@ -46,5 +44,11 @@ function App() {
 
   )
 }
+
+/* other syntax of route
+<Route path="">
+  <Home />
+</Route>
+*/
 
 export default App;
