@@ -32,7 +32,7 @@ function App() {
         <Nav />
         <Router>
           <Routes>
-            <Route path="" element={<Home />}/>
+            <Route path="/" element={<Home />} exact/>
             <Route path="/todo" element={<ToDoList />} />
             <Route path="/about" element={<About />} />
           </Routes>
