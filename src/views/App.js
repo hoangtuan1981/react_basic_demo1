@@ -4,13 +4,14 @@ import {
   BrowserRouter as Router,
   Routes, Route
 } from "react-router-dom";
-import { Outlet, Link, useRoutes, useParams } from "react-router-dom";
+//import { Outlet, Link, useRoutes, useParams } from "react-router-dom";
 import './App.css';
 import Nav from './Nav/Nav'
 import ToDoList from './ToDo/ToDoList';
 //import AddToDo from './AddToDo';
 import About from './About';
 import Home from './Home';
+import PageNotFound from "./PageNotFound";
 
 /*
 function App() {
@@ -27,15 +28,20 @@ function App() {
 function App() {
   return (
     <div className="App">
-
       <header className="App-header">
-        <Nav />
+
         <Router>
-          <Routes>
-            <Route path="/" element={<Home />} exact/>
-            <Route path="/todo" element={<ToDoList />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
+          <div>
+            <Nav />
+            <Routes>
+              <Route path="/" element={<Home />} exact/>
+              <Route index element={<Home />} />
+              <Route path="/todo" element={<ToDoList />} />
+              <Route path="/about" element={<About />} />
+              <Route path="*" element={<PageNotFound />} />
+            </Routes>
+          </div>
+
         </Router>
 
       </header>
