@@ -20,35 +20,50 @@ class Login extends React.Component {
   render() {
     let { user, error } = this.state;
     return (
-      <div>
+      <>
         {error && <p>{error.message}</p>}
         {user && (
           <Navigate to="/home" replace={true} />
         )}
-        <h2>Login Form</h2>
-        <form onSubmit={(event) => this.handleSubmit(event)}>
-          <div>
-            <div>
-              <b>User name</b>
-            </div>
-            <div>
-              <input type="text" name="username" placeholder="Enter username"/>
-            </div>
-          </div>
-          <div>
-            <div>
-              <b>Password</b>
-            </div>
-            <div>
-              <input type="password" name="password" placeholder="Enter Password"/>
-            </div>
-          </div>
-          <div>
-            <button className="button button--primary" type="submit">{this.props.mode === 'login' ? 'Log In' : 'Sign Up'}</button>
-          </div>
+        <div className="container">
+          <div className="screen">
+            <div className="screen__content">
+              <form className="login" onSubmit={(event) => this.handleSubmit(event)}>
+                <div className="login__field">
+                  <i className="login__icon fas fa-user"></i>
+                  <input type="text" name="username" className="login__input" placeholder="User name / Email" />
+                </div>
+                <div className="login__field">
+                  <i className="login__icon fas fa-lock"></i>
+                  <input type="password" name="password" className="login__input" placeholder="Password" />
+                </div>
+                <button className="button login__submit">
+                  <span className="button__text">Log In</span>
+                  <i className="button__icon fas fa-chevron-right"></i>
+                </button>
+              </form>
 
-        </form>
-      </div>
+              {/* <div className="social-login">
+                <h3>log in via</h3>
+                <div className="social-icons">
+                  <a href="#" className="social-login__icon fab fa-instagram"></a>
+                  <a href="#" className="social-login__icon fab fa-facebook"></a>
+                  <a href="#" className="social-login__icon fab fa-twitter"></a>
+                </div>
+              </div> */}
+
+            </div>
+
+            <div class="screen__background">
+              {/* <span class="screen__background__shape screen__background__shape4"></span>
+              <span class="screen__background__shape screen__background__shape3"></span>
+              <span class="screen__background__shape screen__background__shape2"></span> */}
+              <span class="screen__background__shape screen__background__shape1"></span>
+            </div>
+
+          </div>
+        </div>
+      </>
     );
   }
 }
