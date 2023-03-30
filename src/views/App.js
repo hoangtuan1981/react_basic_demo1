@@ -27,6 +27,8 @@ function App() {
 */
 
 function login() {
+  // check
+  console.log(this.props);
   this.props.history.push("/Home");
 }
 

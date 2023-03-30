@@ -29,17 +29,23 @@ class Nav extends React.Component {
     return (
       <nav>
         <div className='topnav'>
-          {/*using Link
-          <Link to='/'>Home</Link>
-          <Link to='/todo'>To Do</Link>
-          <Link to='/about'>About</Link>
-          <Link to='/contact'>Contact</Link> 
-          <Link to='/'>Log out</Link>*/}
-          <NavLink to='/home' activeclassname="active" exact="true">Home</NavLink>
-          <NavLink to='/todo' activeclassname="active">To Do</NavLink>
-          <NavLink to='/about' activeclassname="active">About</NavLink>
-          <NavLink to='/contact' activeclassname="active">Contact</NavLink>
-          <NavLink to='/' activeclassname="active">Log out</NavLink>
+          <div className='column'>
+            {/*using Link
+            <Link to='/'>Home</Link>
+            <Link to='/todo'>To Do</Link>
+            <Link to='/about'>About</Link>
+            <Link to='/contact'>Contact</Link> 
+            <Link to='/'>Log out</Link>*/}
+            <NavLink to='/home' activeclassname="active" exact="true">Home</NavLink>
+            <NavLink to='/todo' activeclassname="active">To Do</NavLink>
+            <NavLink to='/about' activeclassname="active">About</NavLink>
+            <NavLink to='/contact' activeclassname="active">Contact</NavLink>
+          </div>
+
+          <div className='column'>
+            <NavLink to='/' activeclassname="active" className='nav_logout'>Log out</NavLink>
+          </div>
+
         </div>
       </nav>
     )
