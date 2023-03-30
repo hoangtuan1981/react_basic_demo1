@@ -6,11 +6,12 @@ import {
 } from "react-router-dom";
 //import { Outlet, Link, useRoutes, useParams } from "react-router-dom";
 import './App.css';
-import Nav from './Nav/Nav'
+
 import ToDoList from './ToDo/ToDoList';
 //import AddToDo from './AddToDo';
 import About from './About';
 import Home from './Home';
+import Login from './Login/Login'
 import PageNotFound from "./PageNotFound";
 
 /*
@@ -25,17 +26,24 @@ function App() {
 }
 */
 
+function login() {
+  this.props.history.push("/Home");
+}
+
 function App() {
+  const mode = 'login';
   return (
     <div className="App">
       <header className="App-header">
 
         <Router>
           <div>
-            <Nav />
             <Routes>
-              <Route path="/" element={<Home />} exact/>
-              <Route index element={<Home />} />
+              <Route path="/" element={<Login mode={mode}
+                onSubmit={ login } />} exact />
+              <Route path="/index" element={<Login mode={mode}
+                onSubmit={ login } />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/todo" element={<ToDoList />} />
               <Route path="/about" element={<About />} />
               <Route path="*" element={<PageNotFound />} />
