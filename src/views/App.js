@@ -14,7 +14,7 @@ import Home from './Home';
 import Login from './Login/Login'
 import PageNotFound from "./PageNotFound";
 import UserList from "./User/UserList";
-
+import Vote from "./CompWithHook/Vote";
 /*
 function App() {
   return (
@@ -49,7 +49,8 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/todo" element={<ToDoList />} />
               <Route path="/about" element={<About />} />
-              <Route path="/user" element={<UserList />} />              
+              <Route path="/user" element={<UserList />} /> 
+              <Route path="/vote" element={<Vote />} />                            
               <Route path="*" element={<PageNotFound />} />
               {/* <Route path="*"  lazy={() => import("./PageNotFound")}/> */}
             </Routes>
