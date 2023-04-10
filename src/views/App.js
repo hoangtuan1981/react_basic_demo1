@@ -2,7 +2,7 @@
 //import * as ReactDOM from "react-dom";
 import {
   BrowserRouter as Router,
-  Routes, Route
+  Routes, Route, Switch
 } from "react-router-dom";
 //import { Outlet, Link, useRoutes, useParams } from "react-router-dom";
 import './App.css';
@@ -13,6 +13,7 @@ import About from './About';
 import Home from './Home';
 import Login from './Login/Login'
 import PageNotFound from "./PageNotFound";
+import UserList from "./User/UserList";
 
 /*
 function App() {
@@ -48,8 +49,25 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/todo" element={<ToDoList />} />
               <Route path="/about" element={<About />} />
+              <Route path="/user" element={<UserList />} />              
               <Route path="*" element={<PageNotFound />} />
+              {/* <Route path="*"  lazy={() => import("./PageNotFound")}/> */}
             </Routes>
+            
+            
+            {/* react route v5 syntax.
+            <Switch>
+              <Route path="/" element={<Login mode={mode}
+                onSubmit={login} />} exact />
+              <Route path="/index" element={<Login mode={mode}
+                onSubmit={login} />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/todo" element={<ToDoList />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/user" element={<UserList />} />
+              <Route path="*" element={<PageNotFound />} />
+            </Switch> */}
+
           </div>
 
         </Router>
