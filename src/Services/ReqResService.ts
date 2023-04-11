@@ -26,6 +26,18 @@ class UserReqRes extends ReqResBase {
         let res = await axios.get(`${this.url}/users/${id}`);
         return res && res.data ? res.data : [];
     }
+
+    /*Generic function
+    https://www.w3schools.com/typescript/typescript_basic_generics.php
+    */
+    createPair<S, T>(v1: S, v2: T): [S, T] {
+        return [v1, v2];
+    }
+
+    create<ReqResBase>(v1: ReqResBase): [ReqResBase] {
+        return [v1];
+    }
+    
 }
 
 export default UserReqRes;
