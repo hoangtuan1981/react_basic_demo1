@@ -35,6 +35,12 @@ class UserList extends React.Component {
 
   }
 
+  createStudent = (student) => {
+    //console.log(student);
+    //call mapDispatchToProps in event.
+    this.props.createStudent();
+
+  }
   render() {
     //users from api
     let { users } = this.state;
@@ -63,10 +69,12 @@ class UserList extends React.Component {
             return (
               <div key={item.id}>
                 {item.id} - {item.name} <span onClick={() => this.deleteStudent(item)}>x</span>
+                
               </div>
             )
           }
           )}
+          <button onClick={() => this.createStudent()}>Create Student</button>
         </div>
       </>
     )
@@ -88,7 +96,8 @@ const mapDispatchToProps = (dispatch) => {
     //increment: () => dispatch(increment()),
     //decrement: () => dispatch(decrement()),
     //reset: () => dispatch(reset())
-    deleteStudent: (student) => dispatch({ type: "DELETE_STUDENT", payload: student })
+    deleteStudent: (student) => dispatch({ type: "DELETE_STUDENT", payload: student }),
+    createStudent: () => dispatch({ type: "CREATE_STUDENT" })
   };
 };
 

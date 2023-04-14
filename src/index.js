@@ -8,6 +8,7 @@ import { createStore  } from 'redux'
 import rootReducer from './store/reducers/rootReducer'
 
 const store = createStore (rootReducer,
+  //Enable to see redux in schrome redux devtool.
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()
   )
 
